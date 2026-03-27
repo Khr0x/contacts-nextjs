@@ -211,15 +211,6 @@ export default function CreateOrganizationPage() {
               {isSubmitting ? "Creando..." : "Crear organización"}
             </Button>
           </form>
-
-          <p className="text-center text-sm text-muted-foreground">
-            <Link
-              href="/"
-              className="font-medium text-zinc-900 underline-offset-4 hover:underline"
-            >
-              Omitir por ahora
-            </Link>
-          </p>
         </div>
 
         <span className="absolute bottom-8 right-8 text-xs text-muted-foreground">

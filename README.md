@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contacts App
 
-## Getting Started
+Aplicacion web para gestionar contactos y organizaciones, construida con Next.js 16.
 
-First, run the development server:
+## Acerca del proyecto
+
+Esta aplicacion permite a los usuarios autenticarse, crear organizaciones y gestionar contactos dentro de cada organizacion. Es un proyecto full-stack que utiliza Next.js como framework principal con autenticacion integrada mediante better-auth.
+
+## Stack tecnologico
+
+- **Framework:** Next.js 16.2.1 (App Router)
+- **Lenguaje:** TypeScript
+- **Estilos:** Tailwind CSS 4
+- **UI Components:** shadcn/ui + Radix UI
+- **Formularios:** React Hook Form + Zod
+- **Autenticacion:** better-auth
+- **Icons:** hugeicons
+
+## Requisitos previos
+
+- Node.js 20+
+- [Bun](https://bun.sh) (recomendado) o npm/yarn/pnpm
+
+## Instalacion de Bun (si no tienes bun)
+
+### macOS
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+curl -fsSL https://bun.sh/install | bash
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Linux
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Windows
 
-## Learn More
+```bash
+powershell -c "irm bun.sh/install.ps1 | iex"
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Usando npm
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm install -g bun
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Verifica la instalacion:
 
-## Deploy on Vercel
+```bash
+bun --version
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Instalacion del proyecto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clona el repositorio:
+
+```bash
+git clone <url-del-repositorio>
+cd contacts-nextjs
+```
+
+2. Instala las dependencias:
+
+```bash
+bun install
+# o
+npm install
+```
+
+3. Configura las variables de entorno:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Edita `.env.local` y configura la URL del backend si es necesario.
+
+## Uso
+
+### Desarrollo
+
+Ejecuta el servidor de desarrollo:
+
+```bash
+bun dev
+# o
+npm run dev
+```
+
+La aplicacion estara disponible en [http://localhost:3001](http://localhost:3001).
+
+### Produccion
+
+```bash
+bun build
+bun start
+# o
+npm run build
+npm run start
+```
+
+## Estructura del proyecto
+
+```
+├── pages/              # Paginas de la aplicacion (Next.js Pages Router)
+├── components/         # Componentes React
+├── app/                # App Router (si se usa)
+├── styles/             # Estilos globales
+└── .env.local          # Variables de entorno (no committed)
+```
+
+## Scripts disponibles
+
+- `bun dev` - Inicia el servidor de desarrollo
+- `bun build` - Construye la aplicacion para produccion
+- `bun start` - Inicia el servidor de produccion
+- `bun lint` - Ejecuta el linter
+
+## Variables de entorno
+
+Ver `.env.example` para las variables requeridas.

@@ -16,7 +16,6 @@ import { authClient } from "@/lib/auth/auth-client";
 export default function RegisterPage() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { data: activeOrganization } = authClient.useActiveOrganization();
   const {
     register,
     handleSubmit,
@@ -37,9 +36,7 @@ export default function RegisterPage() {
         roles: ["user"],
       });
 
-      if(!activeOrganization) {
-        router.push("/organization-create");
-      }
+      router.push("/organization-create");
 
     } catch (error) {
       console.error("Registration error:", error);
